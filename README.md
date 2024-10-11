@@ -40,23 +40,23 @@ src/
 
 * ### Post :
 
- * #### Request Handling
+  * #### Request Handling
 
-  * A POST request is sent to **/receipts/process**, received by **ReceiptController**.
-  * The request body is validated based on the **Receipt** model.
+   * A POST request is sent to **/receipts/process**, received by **ReceiptController**.
+   * The request body is validated based on the **Receipt** model.
 
- * #### Service Layer
+  * #### Service Layer
 
-  * The controller delegates the processing logic to **PointsService**.
-  * A unique receipt ID (UUID) is generated and points are calculated based on:
-    *  Alphanumeric characters in the retailer name.
-    *  Total amount being a round number or divisible by 0.25.
-    *  Item description length and purchase time.
-  * The receipt and calculated points are stored in memory.
+   * The controller delegates the processing logic to **PointsService**.
+   * A unique receipt ID (UUID) is generated and points are calculated based on:
+     *  Alphanumeric characters in the retailer name.
+     *  Total amount being a round number or divisible by 0.25.
+     *  Item description length and purchase time.
+   * The receipt and calculated points are stored in memory.
 
- * #### Returning the Response
+  * #### Returning the Response
 
-  *  The receipt ID is returned to the client as part of a **ReceiptResponseDTO** with an HTTP 200 OK status.
+   * The receipt ID is returned to the client as part of a **ReceiptResponseDTO** with an HTTP 200 OK status.
 
 
 * ### Get :
