@@ -103,8 +103,8 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
 ### Example API calls
 
   * **Post**:
-    * end point : **/receipts/process**
-    * ```
+    * Endpoint : **/receipts/process**
+    ```bash
 curl -X POST http://localhost:8080/receipts/process \
   -H "Content-Type: application/json" \
   -d '{
