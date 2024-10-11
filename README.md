@@ -103,19 +103,21 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
 ### Example API calls
 
   * **Post**:
-    * Endpoint : **/receipts/process**
-    ```bash
-curl -X POST http://localhost:8080/receipts/process \
-  -H "Content-Type: application/json" \
-  -d '{
-        "retailer": "Target",
-        "purchaseDate": "2022-01-01",
-        "purchaseTime": "13:01",
-        "items": [
-          {"shortDescription": "Mountain Dew 12PK", "price": "6.49"}
-        ],
-        "total": "6.49"
-      }'
+  * Endpoint: **/receipts/process**
+  
+  ```bash
+  curl -X POST http://localhost:8080/receipts/process \
+    -H "Content-Type: application/json" \
+    -d '{
+          "retailer": "Target",
+          "purchaseDate": "2022-01-01",
+          "purchaseTime": "13:01",
+          "items": [
+            {"shortDescription": "Mountain Dew 12PK", "price": "6.49"}
+          ],
+          "total": "6.49"
+        }'
+   ```
 
   * **Get**:
     * end point : **/receipts/{id}/points**
