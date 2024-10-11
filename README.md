@@ -42,34 +42,35 @@ src/
 
   * #### Request Handling
 
-   * A POST request is sent to **/receipts/process**, received by **ReceiptController**.
-   * The request body is validated based on the **Receipt** model.
+    * A POST request is sent to **/receipts/process**, received by **ReceiptController**.
+    * The request body is validated based on the **Receipt** model.
 
   * #### Service Layer
 
-   * The controller delegates the processing logic to **PointsService**.
-   * A unique receipt ID (UUID) is generated and points are calculated based on:
-     *  Alphanumeric characters in the retailer name.
-     *  Total amount being a round number or divisible by 0.25.
-     *  Item description length and purchase time.
-   * The receipt and calculated points are stored in memory.
+    * The controller delegates the processing logic to **PointsService**.
+    * A unique receipt ID (UUID) is generated and points are calculated based on:
+       *  Alphanumeric characters in the retailer name.
+       *  Total amount being a round number or divisible by 0.25.
+       *  Item description length and purchase time.
+    * The receipt and calculated points are stored in memory.
 
   * #### Returning the Response
 
-   * The receipt ID is returned to the client as part of a **ReceiptResponseDTO** with an HTTP 200 OK status.
+    * The receipt ID is returned to the client as part of a **ReceiptResponseDTO** with an HTTP 200 OK status.
 
 
 * ### Get :
 
- * #### Request Handling
- 
-  * A GET request is sent to **/receipts/{id}/points**, received by **ReceiptController**.
-  * The receipt ID is extracted from the URL and passed to the service layer.
-   
- * #### Service Layer
-  * The service attempts to retrieve the points using the receipt ID from the in-memory store.
-  * If the receipt is found, the points are returned in a **PointsResponseDTO**.
-   
- * #### Returning the Response
-  * If the receipt ID is invalid or the receipt is not found, a **ReceiptNotFoundException** is thrown and caught by the **GlobalExceptionHandler**.
+  * #### Request Handling
+  
+    * A GET request is sent to **/receipts/{id}/points**, received by **ReceiptController**.
+    * The receipt ID is extracted from the URL and passed to the service layer.
+    
+  * #### Service Layer
+    
+    * The service attempts to retrieve the points using the receipt ID from the in-memory store.
+    * If the receipt is found, the points are returned in a **PointsResponseDTO**.
+    
+  * #### Returning the Response
+    * If the receipt ID is invalid or the receipt is not found, a **ReceiptNotFoundException** is thrown and caught by the **GlobalExceptionHandler**.
 
