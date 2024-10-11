@@ -104,7 +104,7 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
 
   * **Post**:
     * end point : **/receipts/process**
-    * ```bash
+    * ```
 curl -X POST http://localhost:8080/receipts/process \
   -H "Content-Type: application/json" \
   -d '{
@@ -121,7 +121,7 @@ curl -X POST http://localhost:8080/receipts/process \
     * end point : **/receipts/{id}/points**
     * curl -X GET http://localhost:8080/receipts/{id}/points
 
-Replace {id} with the actual receipt ID received from the POST request.
+Replace {id} with the actual receipt ID from the POST request.
 
 
 
