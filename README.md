@@ -74,3 +74,48 @@ src/
   * #### Returning the Response
     * If the receipt ID is invalid or the receipt is not found, a **ReceiptNotFoundException** is thrown and caught by the **GlobalExceptionHandler**.
 
+## Error Handling
+
+The API has robust error handling using Spring Boot’s @ControllerAdvice for global exception management.
+
+### Common Errors:
+  * 400 Bad Request: Returned when required fields are missing or have invalid formats.
+  * 404 Not Found: Returned when the receipt ID is not found.
+
+
+# How to run the program
+
+## Prerequisites 
+  * **Docker**: Make sure Docker is installed and running.
+
+## Steps
+ * **Clone the repository** :
+    git clone https://github.com/rakshith53/receipt-processor
+    cd receipt-processor
+ * **Build docker image** :
+    docker build -t receipt-processor .
+ * **Run Docker Container**:
+    docker run -p 8080:8080 receipt-processor
+ * **Access the application** :
+    The API will be running on **http://localhost:8080**. You can test the API endpoints using Postman or curl.
+
+
+### Example API calls
+
+  * **Post**:
+    * end point : **/receipts/process**
+    * curl -X POST http://localhost:8080/receipts/process \
+  -H "Content-Type: application/json" \
+  -d '{
+        "retailer": "Target",
+        "purchaseDate": "2022-01-01",
+        "purchaseTime": "13:01",
+        "items": [
+          {"shortDescription": "Mountain Dew 12PK", "price": "6.49"}
+        ],
+        "total": "6.49"
+      }'
+ 
+
+
+
