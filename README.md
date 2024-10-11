@@ -115,7 +115,11 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
         ],
         "total": "6.49"
       }'
- 
+
+  * **Get**:
+    * end point : **/receipts/{id}/points**
+    * curl -X GET http://localhost:8080/receipts/{id}/points
+
 
 
 
