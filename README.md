@@ -15,6 +15,7 @@ The Receipt Processing API is a RESTful service that processes receipts and calc
 * Postman (for API testing
 
 ## Project Structure
+```
 src/
  └── main/
      └── java/
@@ -35,6 +36,7 @@ src/
              │   └── InternalServerErrorException.java
              └── exception/
                  └── GlobalExceptionHandler.java
+```
 
 ## API Flow and Interaction
 
@@ -103,7 +105,7 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
 ### Example API calls
 
   * **Post**:
-  * Endpoint: **/receipts/process**
+    * Endpoint: **/receipts/process**
   
   ```bash
   curl -X POST http://localhost:8080/receipts/process \
@@ -120,8 +122,10 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
    ```
 
   * **Get**:
-    * end point : **/receipts/{id}/points**
-    * curl -X GET http://localhost:8080/receipts/{id}/points
+    * Endpoint : **/receipts/{id}/points**
+    ```bash  
+    curl -X GET http://localhost:8080/receipts/{id}/points
+    ```
 
 Replace {id} with the actual receipt ID from the POST request.
 
