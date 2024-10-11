@@ -31,10 +31,9 @@ src/
              │   ├── ReceiptResponseDTO.java
              │   └── PointsResponseDTO.java
              ├── exception/
-             │   ├── ReceiptNotFoundException.java
-             │   ├── BadRequestException.java
-             │   └── InternalServerErrorException.java
-             └── exception/
+                 ├── ReceiptNotFoundException.java
+                 ├── BadRequestException.java
+                 └── InternalServerErrorException.java
                  └── GlobalExceptionHandler.java
 ```
 
@@ -107,19 +106,19 @@ The API has robust error handling using Spring Boot’s @ControllerAdvice for gl
   * **Post**:
     * Endpoint: **/receipts/process**
   
-  ```bash
-  curl -X POST http://localhost:8080/receipts/process \
-    -H "Content-Type: application/json" \
-    -d '{
-          "retailer": "Target",
-          "purchaseDate": "2022-01-01",
-          "purchaseTime": "13:01",
-          "items": [
-            {"shortDescription": "Mountain Dew 12PK", "price": "6.49"}
-          ],
-          "total": "6.49"
-        }'
-   ```
+    ```bash
+    curl -X POST http://localhost:8080/receipts/process \
+      -H "Content-Type: application/json" \
+      -d '{
+            "retailer": "Target",
+            "purchaseDate": "2022-01-01",
+            "purchaseTime": "13:01",
+            "items": [
+              {"shortDescription": "Mountain Dew 12PK", "price": "6.49"}
+            ],
+            "total": "6.49"
+          }'
+     ```
 
   * **Get**:
     * Endpoint : **/receipts/{id}/points**
